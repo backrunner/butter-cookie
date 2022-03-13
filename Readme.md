@@ -1,8 +1,8 @@
-# butter-cookie
+# 🍪 Butter Cookie
 
 Manipulate cookie easily via Proxy, less than 1KB after gzip.
 
-## Usage
+## 🔧 Usage
 
 First of all, you should install this package via `npm` or other package manager you're using.
 
@@ -41,6 +41,6 @@ Cookie.username = {
 };
 ```
 
-## License
+## ✒ License
 
 MIT
