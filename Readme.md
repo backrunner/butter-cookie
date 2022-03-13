@@ -1,20 +1,45 @@
 # butter-cookie
 
-Manipulate cookie easily via Proxy
-
-This project is created by [create-a-typescript-lib](https://github.com/backrunner/create-a-typescript-lib).
+Manipulate cookie easily via Proxy, less than 1KB after gzip.
 
 ## Usage
 
-To build this project, you can run this command:
+First of all, you should install this package via `npm` or other package manager you're using.
 
 ```bash
-npm run build
+npm install butter-cookie
 ```
 
-Also, you can use `npm run watch` to start a file changes.
+Then use it like this:
 
-All changes you make will immediately trigger compilation and take effect on the generated script.
+```js
+import Cookie from 'butter-cookie';
+
+// To get the value of some key from document.cookie
+// For example, you want to get the value of key named "username"
+
+console.log(Cookie.username);
+
+// To set a new value to cookie
+Cookie.username = 'new_user';
+
+// To set a new value to cookie with expires or other attributes
+Cookie.username = {
+  sameSite: 'lax',
+  expires: '1h',
+  value: 'new_user',
+};
+
+// To remove a key from cookie
+delete Cookie.username;
+
+// To remove a key from certain domain and path
+Cookie.username = {
+  expires: '-1',
+  domain: 'github.com',
+  path: '/backrunner',
+};
+```
 
 ## License
 
