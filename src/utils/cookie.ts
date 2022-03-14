@@ -50,7 +50,7 @@ const getExpiresStr = (expires: number | string | Date) => {
   );
   const timeUnit = expires
     .replace(/^(?:\d+)\s*(y|year|m|month|day|d|hour|h|minute|min|sec|second|s)$/i, '$1')
-    ?.toLowerCase() as keyof typeof timeSecs;
+    ?.toLowerCase() as keyof typeof timeSecs | undefined;
   if (isNaN(timeAmount) || !timeUnit || !timeSecs[timeUnit]) {
     throw new Error('Cannot parse expires time.');
   }
